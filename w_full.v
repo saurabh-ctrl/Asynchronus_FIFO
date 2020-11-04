@@ -1,6 +1,6 @@
 // 5. w_full module:
 // Purpose: It generate the fifo_full condition logic.
-//			Generate the waddr signal which is then send to the fifo_mem.
+//	    Generate the waddr signal which is then send to the fifo_mem.
 module w_full( waddr,wptr,wfull,wq2_rptr,wen,wclk,wrstn);
 
 	// Parameter Define:
@@ -8,15 +8,15 @@ module w_full( waddr,wptr,wfull,wq2_rptr,wen,wclk,wrstn);
 	
 	// Port Define:
 	input		[ADDR_WIDTH : 0]	wq2_rptr;
-	input 							wclk,wen,wrstn;
+	input 					wclk,wen,wrstn;
 	output reg 	[ADDR_WIDTH : 0]	wptr;
-	output reg						wfull;
+	output reg				wfull;
 	output 		[ADDR_WIDTH-1 : 0]	waddr;
 	
 	// Internal Variable:
 	reg 		[ADDR_WIDTH : 0]	wbin;
 	wire 		[ADDR_WIDTH : 0] 	wbinnext;
-	wire 							wfull_val;
+	wire 					wfull_val;
 	
 	//------------------------------------------
 	// BINARY CODE for ADDRESS
