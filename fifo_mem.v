@@ -9,11 +9,11 @@ module fifo_mem( rdata,wdata,waddr,raddr,wfull,wen,wclk);
 	// Port Define:
 	input	[DATA_WIDTH-1 : 0]	wdata;
 	input	[ADDR_WIDTH-1 : 0]	waddr,raddr;
-	input						wen,wclk,wfull;
+	input				wen,wclk,wfull;
 	output	[DATA_WIDTH-1 : 0]	rdata;
 	
 	// Internal Variable:
-	reg		[DATA_WIDTH-1 : 0] mem [0 : DEPTH-1];
+	reg	[DATA_WIDTH-1 : 0] mem [0 : DEPTH-1];
 	
 	// Code:
 	always@(posedge wclk)
