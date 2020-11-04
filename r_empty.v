@@ -1,6 +1,6 @@
 // 4.r_empty module
 // Purpose: It generate the fifo_empty condition logic.
-//			Generate the read address which is then passed to the fifo_mem.
+//	    Generate the read address which is then passed to the fifo_mem.
 module r_empty( raddr,rempty,rptr,rq2_wptr,ren,rclk,rrstn);
 	
 	// Parameter Define:
@@ -8,15 +8,15 @@ module r_empty( raddr,rempty,rptr,rq2_wptr,ren,rclk,rrstn);
 	
 	// Port Define:
 	input		[ADDR_WIDTH : 0]	rq2_wptr;
-	input 							ren,rclk,rrstn;
+	input 					ren,rclk,rrstn;
 	output reg	[ADDR_WIDTH : 0]	rptr;
 	output		[ADDR_WIDTH-1 : 0]	raddr;
-	output reg						rempty;
+	output reg				rempty;
 	
 	// Internal variable:
-	reg 	[ADDR_WIDTH : 0]	rbin;
-	wire	[ADDR_WIDTH : 0]	rbinnext;
-	wire 						rempty_val;
+	reg 		[ADDR_WIDTH : 0]	rbin;
+	wire		[ADDR_WIDTH : 0]	rbinnext;
+	wire 					rempty_val;
 	////////////////////////////
 	// BINARY CODE for ADDRESS
 	///////////////////////////
